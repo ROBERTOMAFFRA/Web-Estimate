@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spero Estimate</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <img src="/static/logo.png" class="logo">
+    <h2>Create Estimate</h2>
+
+    <form method="POST">
+      <label>Client Name:</label>
+      <input type="text" name="client" required>
+
+      <label>Description:</label>
+      <input list="descriptions" name="description" placeholder="Type or choose..." required>
+      <datalist id="descriptions">
+        {% for item in descriptions %}
+        <option value="{{ item }}">
+        {% endfor %}
+      </datalist>
+
+      <label>Quantity:</label>
+      <input type="number" step="0.01" name="qty" required>
+
+      <label>Unit Price ($):</label>
+      <input type="number" step="0.01" name="unit_price" required>
+
+      <button type="submit">Generate PDF</button>
+    </form>
+  </div>
+</body>
+</html>

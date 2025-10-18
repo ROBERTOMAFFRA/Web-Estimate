@@ -7,4 +7,5 @@ click==8.1.7
 gunicorn==21.2.0
 reportlab
 openpyxl
+pandas
 sqlalchemy
